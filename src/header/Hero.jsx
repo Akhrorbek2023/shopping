@@ -112,7 +112,7 @@ const Hero = ({single, setSingle}) => {
       }
     
     </div>
-    <div className="flex items-center gap-4 sm:gap-0 sm:w-full sm:text-sm mx-auto py-[30px]">
+    <div className="flex items-center gap-4 w-[400px] sm:gap-0 sm:w-full sm:text-sm mx-auto py-[30px]">
             <Button
                 variant="text"
                 className="flex items-center gap-2"

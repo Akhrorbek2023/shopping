@@ -1,14 +1,28 @@
-import { useState } from 'react'
+
 
 import './App.css'
-import Head from './head'
+import React, { useState } from 'react'
+import Footer from './footer/Footer'
+import Navbar from './navbar/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import Header from './header/Header'
+import Single from './header/Single'
+import Orders from './header/Orders'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [single, setSingle] = useState([])
 
   return (
     <>
-    <Head/>
+      <div>
+        <Navbar/>
+        <Routes>
+            <Route path='/' element={<Header single={single} setSingle={setSingle}/>}/>
+            <Route path='/single' element={<Single single={single} />}/>
+            <Route path='/orders' element={<Orders/>}/>
+        </Routes>
+        <Footer/>
+    </div>
     </>
   )
 }
