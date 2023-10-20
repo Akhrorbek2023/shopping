@@ -31,7 +31,7 @@ const Information = () => {
         <h1 className='mb-4 font-[600]'>Informations</h1>
         {
             info?.map((item)=>(
-                <Link className='flex text-gray-700 mb-1'>
+                <Link className='flex text-gray-700 mb-1' key={item.id}>
                 {item.title}
                 </Link>
             ))

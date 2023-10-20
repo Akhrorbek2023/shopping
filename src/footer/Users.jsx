@@ -32,7 +32,7 @@ const Users = () => {
         <h1 className='mb-4 font-[600]'>For Users</h1>
         {
             user?.map((item)=>(
-                <Link className='flex mb-1 text-gray-700'>
+                <Link className='flex mb-1 text-gray-700' key={item.id}>
                 {item.title}
                 </Link>
             ))

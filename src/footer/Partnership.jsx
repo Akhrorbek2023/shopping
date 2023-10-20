@@ -31,7 +31,7 @@ const Partnership = () => {
         <h1 className='mb-4 font-[600]'>Partnership</h1>
         {
             about?.map((item)=>(
-                <Link className='flex mb-1 text-gray-700'>
+                <Link className='flex mb-1 text-gray-700' key={item.id}>
                 {item.title}
                 </Link>
             ))

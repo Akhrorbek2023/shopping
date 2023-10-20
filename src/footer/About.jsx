@@ -30,7 +30,7 @@ const About = () => {
         <h1 className='mb-4 font-[600]'>About</h1>
         {
             about?.map((item)=>(
-                <Link className='flex text-gray-700 mb-1'>
+                <Link className='flex text-gray-700 mb-1' key={item.id}>
                 {item.title}
                 </Link>
             ))
