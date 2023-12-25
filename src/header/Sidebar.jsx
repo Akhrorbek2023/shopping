@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Up from "../assets/icons/arrowUpIcon.svg";
 import Down from "../assets/icons/arrowDownIcon.svg";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Sidebar = () => {
   const [arrowCat, setArrowCat] = useState(true);
   const [arrowBrand, setArrowBrand] = useState(true);
   const [arrowFeat, setArrowFeat] = useState(true);
+  const [product, setProduct] = useState()
+  const url = "https://fakestoreapi.com/products/categories"
+  
+
+  useEffect(() => {
+    const fetchProd = async () => {
+      try {
+        const response = await axios.get(url);
+        setProduct(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchProd()
+  },[url])
+  console.log(product);
+
+
 
   return (
     <div className="mr-10">
@@ -24,14 +43,13 @@ const Sidebar = () => {
         )}
       </div>
       {
-        arrowCat && 
-        <div className="">
-        <Link className="block mb-1 text-gray-700">Mobile Accecuary</Link>
-        <Link className="block mb-1 text-gray-700">Electronics</Link>
-        <Link className="block mb-1 text-gray-700">Smartphones</Link>
-        <Link className="block mb-1 text-gray-700">Modern Tech</Link>
-        <Link className="block mb-1  text-blue-500">See All</Link>
-      </div>
+        arrowCat && product?.map((item) => (
+          <div className="">
+          <Link className="block mb-1 text-gray-700">{item}</Link>
+       
+        </div>
+        ))
+     
       }
      </div>
      <div>

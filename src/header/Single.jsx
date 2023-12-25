@@ -11,9 +11,15 @@ const Single = ({single}) => {
       <div className="container">
         <div className="flex justify-between bg-white px-5 py-5 mb-10 rounded sm:block">
           <div className="w-[30%] sm:w-full">
-            {
+            
                 <img src={single.image} alt={single.title} />
-            }
+                <div className="flex">
+                <img className="w-[80px] p-2 rounded" src={single.image} alt={single.title} />
+                <img className="w-[80px] p-2 rounded" src={single.image} alt={single.title} />
+                <img className="w-[80px] p-2 rounded" src={single.image} alt={single.title} />
+                <img className="w-[80px] p-2 rounded" src={single.image} alt={single.title} />
+                </div>
+           
           </div>
           <div className="w-[65%] sm:w-full">
             <div className="flex justify-between items-center sm:block">
@@ -23,18 +29,18 @@ const Single = ({single}) => {
                   <p className="text-green-600">in stock</p>
                 </div>
                 <h1 className="text-[18px] font-[600]">
-                  Mens Long Sleeve T-shirt Cutton Base Layer Slim Muscle
+                  {single.title}
                 </h1>
               </div>
-              <div className="flex space-x-2 items-center">
+              <button className="flex space-x-2 items-center">
                 <img className="w-[20px]" src={Heart} alt="" />
                 <p className="text-blue-700">Save for later</p>
-              </div>
+              </button>
             </div>
             <div className="flex space-x-5">
               <div className="flex space-x-2">
                 <img src={Stars} alt="stars" />
-                <p className="text-yellow-900">9.3</p>
+                <p className="text-yellow-900"></p>
               </div>
               <div className="flex space-x-2">
                 <img src={Review} alt="review" />
@@ -47,7 +53,7 @@ const Single = ({single}) => {
             </div>
             <div className="flex bg-[#FFF0DF] space-x-[130px]  py-4 sm:space-x-0 sm:text-center sm:block">
               <div className="px-4 sm:px-0 ">
-                <h1 className="font-[600] text-[18px] text-red-600">$98.00</h1>
+                <h1 className="font-[600] text-[18px] text-red-600">${single.price}</h1>
                 <p className="text-gray-500">50-100 pcs</p>
               </div>
               <div className="px-4 sm:px-0 sm:border-none border-l-2 border-gray-500">
@@ -67,7 +73,7 @@ const Single = ({single}) => {
                 <hr />
                 <div className="flex py-2">
                     <p className="w-[250px] text-gray-600">Type:</p>
-                    <p className="text-gray-700 w-[250px]">Classic shoes</p>
+                    <p className="text-gray-700 w-[250px]">{single.category}</p>
                 </div>
                 <div className="flex py-2">
                     <p className="w-[250px] text-gray-600">Material:</p>
