@@ -60,7 +60,7 @@ const Hero = ({ single, setSingle }) => {
 
   return (
     <div className="mx-auto">
-      <ul className="grid grid-cols-3 space-y-5 sm:grid-cols-1 sm:mx-auto sm:w-full">
+      <ul className="grid grid-cols-3 gap-3 sm:grid-cols-1 sm:mx-auto sm:w-full">
         {pageItems?.map((item) => (
              <SingleProduct
              key={item.id}
